@@ -34,6 +34,12 @@ def get_cnn_train_loader(data_dir: str, batch_size: int, workers: int):
     transform = {'train': transforms.Compose([transforms.Resize([32, 32]),
                                               transforms.ToTensor()])}
 
+# def get_cnn_train_loader(data_dir: str, batch_size: int, workers: int):
+#     # 修改圖像大小為64x64
+#     transform = {'train': transforms.Compose([transforms.Resize([64, 64]),
+#                                               transforms.ToTensor()])}
+    
+
     # get train dataset
     train_data = torchvision.datasets.ImageFolder(root=data_dir,
                                                   transform=transform['train'])
